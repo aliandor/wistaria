@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Wistaria Restaurant - personal project`,
+    description: `Personal Project - a restaurant website using sanity.io for the menu section.`,
+    author: `Alfonso`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,6 +15,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
+    // {
+    //   resolve: `gatsby-source-sanity`,
+    //   options: {
+    //     projectId: `abc`,
+    //     dataset: `123`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
