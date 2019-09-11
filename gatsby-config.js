@@ -16,13 +16,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    // {
-    //   resolve: `gatsby-source-sanity`,
-    //   options: {
-    //     projectId: `abc`,
-    //     dataset: `123`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: `gaughzd2`,
+        dataset: `menu`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
