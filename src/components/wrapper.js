@@ -1,12 +1,12 @@
 import React from "react"
+import styled from "styled-components"
 
 const Wrapper = ({ children }) => {
-  const WrapperStyles = {
-    width: `100vw`,
-    // padding: `1rem`,
-  }
-
-  return <div style={WrapperStyles}>{children}</div>
+  return <Container>{children}</Container>
 }
 
 export default Wrapper
+
+const Container = styled.div`
+  width: 100vw;
+`

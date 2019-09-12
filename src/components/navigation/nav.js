@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-// import { Link } from "gatsby"
-// import Wrapper from "../wrapper"
 import Logo from "../navigation/logo"
 import { Icons } from "../assets/icons"
 

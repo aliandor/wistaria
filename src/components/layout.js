@@ -1,16 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
 import "./layout.css"
 import "typeface-supermercado-one"
 const Layout = ({ children }) => {
   return (
     <>
-      <div>
+      <div style={{ width: "100vw" }}>
         <main>{children}</main>
-        <footer>
+        <footer
+          style={{
+            textAlign: "center",
+            padding: "1rem 1rem 2rem 1rem",
+            fontFamily: "sans-serif",
+          }}
+        >
           © {new Date().getFullYear()} Wistaria Restaurant and Bar
         </footer>
       </div>
