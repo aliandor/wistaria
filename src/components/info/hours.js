@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Colors } from "../components/assets/styles"
+import { Colors } from "../assets/styles"
 
-import Card from "../info/card"
+import Card from "./card"
 
 const Hours = () => {
   return (

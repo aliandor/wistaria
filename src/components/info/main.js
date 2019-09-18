@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Colors, Styles } from "../components/assets/styles"
-import Address from "../info/address"
-import Hours from "../info/hours"
-
+import { Colors, Styles } from "../assets/styles"
+import Address from "./address"
+import Hours from "./hours"
 const Main = () => {
   return (
     <Container>

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import GoogleMapReact from "google-map-react"
-import Card from "../info/card"
+import Card from "./card"
 
 const Address = () => {
   const DefaultValues = {

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Styles } from "../components/assets/styles"
+import { Styles } from "../assets/styles"
 
 const Card = ({ children }) => {
   return <Cards>{children}</Cards>
