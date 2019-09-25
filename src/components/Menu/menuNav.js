@@ -1,85 +1,74 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-import { Icons } from "../assets/icons"
 
-const MenuNav = () => {
+export default () => {
+  const data = useStaticQuery(graphql`
+    query Menus {
+      allSanityMenu {
+        edges {
+          node {
+            menuName
+            image {
+              asset {
+                url
+              }
+            }
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <Tabs>
-      <Link to="/dinner">
-        <li>
-          <img src={Icons.dinner} alt="" />
-        </li>
-        <p>Dinner</p>
-      </Link>
-      <Link to="">
-        <li>
-          <img src={Icons.breakfast} alt="" />
-        </li>
-        <p>Brunch</p>
-      </Link>
-      <Link to="">
-        <li>
-          <img src={Icons.drinks} alt="" />
-        </li>
-        <p>Drinks</p>
-      </Link>
-      <Link to="">
-        <li>
-          <img src={Icons.dessert} alt="" />
-        </li>
-        <p>Dessert</p>
-      </Link>
-      <Link to="">
-        <li>
-          <img src={Icons.specials} alt="" />
-        </li>
-        <p>Specials</p>
-      </Link>
+      {data.allSanityMenu.edges.map(({ node: menu }) => (
+        <Link to={`/${menu.slug.current}`}>
+          <img src={menu.image.asset.url} alt="" />
+          <li>{menu.menuName}</li>
+        </Link>
+      ))}
     </Tabs>
   )
 }
 
-export default MenuNav
-
 const Tabs = styled.nav`
   width: 100vw;
+  height: 60px;
   position: fixed;
   bottom: 0;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  align-items: center;
-  justify-content: center;
+  /* grid-template-columns: repeat(5, 20vw);
+  grid-template-rows: 2rem; */
+
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: scroll;
   background: #eee;
   a {
-    &[aria-current="page"] {
-      background: tomato;
-    }
     text-decoration: none;
-    color: #333;
-    font-family: sans-serif;
-    font-weight: 400;
+    color: #505050;
+    font-family: "sans-serif";
+    font-weight: 500;
+    text-align: center;
+    width: 30vw;
     display: flex;
     flex-flow: column nowrap;
-    height: inherit;
     align-items: center;
-    p {
-      font-size: 14px;
-      @media (min-width: 400px) {
-        font-size: 1rem;
-      }
+    justify-content: flex-end;
+    &[aria-current="page"] {
+      background: #505050;
+    }
+    img {
+      width: 24px;
     }
   }
   li {
-    display: flex;
-    align-self: center;
+    margin-top: 8px;
     list-style: none;
-  }
-  img {
-    justify-self: flex-end;
-    /* justify-self: baseline; */
-    width: 24px;
-    height: 24px;
-    transform: translateY(10px);
+    width: 20vw;
+    align-self: flex-end;
   }
 `
