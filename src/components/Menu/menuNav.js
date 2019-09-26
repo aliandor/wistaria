@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import { Colors } from "../assets/styles"
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -22,10 +23,11 @@ export default () => {
       }
     }
   `)
+
   return (
     <Tabs>
       {data.allSanityMenu.edges.map(({ node: menu }) => (
-        <Link to={`/${menu.slug.current}`}>
+        <Link to={`/${menu.slug.current}`} isCurrent>
           <img src={menu.image.asset.url} alt="" />
           <li>{menu.menuName}</li>
         </Link>
@@ -59,7 +61,9 @@ const Tabs = styled.nav`
     align-items: center;
     justify-content: flex-end;
     &[aria-current="page"] {
-      background: #505050;
+      background: ${Colors.LtPurple};
+      font-weight: 600;
+      color: white;
     }
     img {
       width: 24px;
