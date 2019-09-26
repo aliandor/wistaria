@@ -23,11 +23,10 @@ export default () => {
       }
     }
   `)
-
   return (
     <Tabs>
       {data.allSanityMenu.edges.map(({ node: menu }) => (
-        <Link to={`/${menu.slug.current}`} isCurrent>
+        <Link to={`/${menu.slug.current}`}>
           <img src={menu.image.asset.url} alt="" />
           <li>{menu.menuName}</li>
         </Link>
@@ -62,8 +61,6 @@ const Tabs = styled.nav`
     justify-content: flex-end;
     &[aria-current="page"] {
       background: ${Colors.LtPurple};
-      font-weight: 600;
-      color: white;
     }
     img {
       width: 24px;
