@@ -20,6 +20,7 @@ const W_Logo = styled.h1`
   width: 140px;
   height: 42px;
   font-size: 2rem;
+  font-family: "supermercado one";
   align-self: flex-end;
   padding-top: 0.5rem;
   img {

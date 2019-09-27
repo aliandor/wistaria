@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import { Colors } from "../assets/styles"
@@ -6,11 +6,16 @@ import { Colors } from "../assets/styles"
 export default () => {
   const data = useStaticQuery(graphql`
     query Menus {
-      allSanityMenu {
+      allSanityMenu(sort: { order: ASC, fields: _createdAt }) {
         edges {
           node {
             menuName
             image {
+              asset {
+                url
+              }
+            }
+            ActiveImage {
               asset {
                 url
               }
@@ -23,14 +28,12 @@ export default () => {
       }
     }
   `)
-  const A = `https://res.cloudinary.com/dnsdvh13n/image/upload/v1568134825/wistaria/icons/dinner.svg`
-  const B = `https://res.cloudinary.com/dnsdvh13n/image/upload/v1568134825/wistaria/icons/dinner-active.svg`
   return (
     <Tabs>
       {data.allSanityMenu.edges.map(({ node: menu }) => (
         <Link to={`/${menu.slug.current}`}>
-          <img className="active" src={B} alt="" />
-          <img className="default" src={A} alt="" />
+          <img src={menu.ActiveImage.asset.url} alt="" />
+          <img className="default" src={menu.image.asset.url} alt="" />
           <li>{menu.menuName}</li>
         </Link>
       ))}
@@ -44,13 +47,9 @@ const Tabs = styled.nav`
   position: fixed;
   bottom: 0;
   display: grid;
-  /* grid-template-columns: repeat(5, 20vw);
-  grid-template-rows: 2rem; */
-
   display: flex;
   flex-flow: row nowrap;
   overflow: scroll;
-  /* background: #eee; */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   a {
     text-decoration: none;
@@ -78,7 +77,6 @@ const Tabs = styled.nav`
     }
   }
   li {
-    /* margin-top: 5px; */
     list-style: none;
     width: 20vw;
     align-self: flex-end;
