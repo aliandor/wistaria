@@ -23,11 +23,14 @@ export default () => {
       }
     }
   `)
+  const A = `https://res.cloudinary.com/dnsdvh13n/image/upload/v1568134825/wistaria/icons/dinner.svg`
+  const B = `https://res.cloudinary.com/dnsdvh13n/image/upload/v1568134825/wistaria/icons/dinner-active.svg`
   return (
     <Tabs>
       {data.allSanityMenu.edges.map(({ node: menu }) => (
         <Link to={`/${menu.slug.current}`}>
-          <img src={menu.image.asset.url} alt="" />
+          <img className="active" src={B} alt="" />
+          <img className="default" src={A} alt="" />
           <li>{menu.menuName}</li>
         </Link>
       ))}
@@ -47,7 +50,8 @@ const Tabs = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   overflow: scroll;
-  background: #eee;
+  /* background: #eee; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   a {
     text-decoration: none;
     color: #505050;
@@ -60,14 +64,21 @@ const Tabs = styled.nav`
     align-items: center;
     justify-content: flex-end;
     &[aria-current="page"] {
-      background: ${Colors.LtPurple};
+      color: ${Colors.Purple};
+      background: #f9f9f9;
+      font-weight: 600;
+      .default {
+        display: none;
+      }
     }
     img {
       width: 24px;
+      position: absolute;
+      bottom: 28px;
     }
   }
   li {
-    margin-top: 8px;
+    /* margin-top: 5px; */
     list-style: none;
     width: 20vw;
     align-self: flex-end;
