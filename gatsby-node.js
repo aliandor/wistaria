@@ -88,5 +88,5 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
   })
-  return Promise.all(Menus)
+  return Promise.all([Menus])
 }
