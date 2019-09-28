@@ -51,6 +51,8 @@ const Tabs = styled.nav`
   flex-flow: row nowrap;
   overflow: scroll;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  background: #fafafa;
   a {
     text-decoration: none;
     color: #505050;

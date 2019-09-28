@@ -4,26 +4,69 @@ import styled from "styled-components"
 import Layout from "../components/layout.js"
 import MenuNav from "../components/Menu/menuNav"
 
-export const query = graphql`
+export const Items = graphql`
   {
-    sanityItem(category: { slug: { current: { eq: "dinner" } } }) {
-      name
-      description
-      allergens2 {
-        allergen
+    starter: allSanityItem(
+      filter: { subCategory: { subCategory: { eq: "Starters" } } }
+    ) {
+      edges {
+        node {
+          name
+          description
+          price
+          allergens2 {
+            allergen
+          }
+        }
       }
-      price
+    }
+    entree: allSanityItem(
+      filter: { subCategory: { subCategory: { eq: "Mains" } } }
+    ) {
+      edges {
+        node {
+          name
+          description
+          price
+          allergens2 {
+            allergen
+          }
+        }
+      }
     }
   }
 `
 
+const Wrapper = styled.div`
+  text-align: center;
+  padding: 1rem 4rem;
+`
+
 export default ({ data }) => {
-  const Item = data.sanityItem
+  const Starters = data.starter.edges
+  const Mains = data.entree.edges
   return (
     <Layout>
-      <h2>{Item.name}</h2>
-      <p>{Item.description}</p>
-      <small>{Item.price}</small>
+      <Wrapper>
+        <>
+          <h1>Starters</h1>
+          {Starters.map(({ node: starter }) => (
+            <>
+              <h2>{starter.name}</h2>
+              <p>{starter.description}</p>
+              <small>{starter.price}</small>
+            </>
+          ))}
+        </>
+        <h1>Mains</h1>
+        {Mains.map(({ node: main }) => (
+          <>
+            <h2>{main.name}</h2>
+            <p>{main.description}</p>
+            <small>{main.price}</small>
+          </>
+        ))}
+      </Wrapper>
       <MenuNav />
     </Layout>
   )
