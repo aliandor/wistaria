@@ -95,7 +95,7 @@ export default ({ data }) => {
 const Wrapper = styled.div`
   text-align: center;
   display: grid;
-  margin-top: 50px;
+  margin-top: 66px;
   /* padding: 1rem 0; */
   h1 {
     color: ${Colors.Purple};

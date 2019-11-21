@@ -22,7 +22,7 @@ const W_Logo = styled.h1`
   font-size: 2rem;
   font-family: "supermercado one";
   align-self: flex-end;
-  padding-top: 1.5rem;
+  padding-top: 0.6rem;
   img {
     height: 42px;
     padding-right: 0.2rem;
