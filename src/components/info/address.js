@@ -1,16 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import GoogleMapReact from "google-map-react"
 import Card from "./card"
 
 const Address = () => {
-  const DefaultValues = {
-    center: {
-      lat: 34.162679,
-      lng: -118.052536,
-    },
-    zoom: 20,
-  }
   return (
     <Card>
       <Map>
@@ -32,8 +24,12 @@ export default Address
 
 const Info = styled.div`
   text-align: center;
-  font-family: "sans-serif";
   font-weight: 400;
+  padding: 0.5rem;
+  /* background: tomato; */
+  @media (min-width: 900px) {
+    padding: 1.75rem 0;
+  }
 `
 const Map = styled.div`
   height: 140px;
@@ -43,5 +39,11 @@ const Map = styled.div`
     width: inherit;
     border-radius: inherit;
     border: none;
+  }
+  @media (min-width: 900px) {
+    height: 50%;
+    iframe {
+      height: 265px;
+    }
   }
 `

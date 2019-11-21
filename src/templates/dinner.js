@@ -2,8 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout.js"
+import Nav from "../components/navigation/nav"
 import MenuNav from "../components/Menu/menuNav"
 import { Colors } from "../components/assets/styles"
+
 export const Items = graphql`
   {
     starter: allSanityItem(
@@ -42,12 +44,16 @@ export default ({ data }) => {
   const Mains = data.entree.edges
   return (
     <Layout>
+      <Nav />
       <Wrapper>
         <h1>Starters</h1>
         {Starters.map(({ node: starter }) => (
           <Item>
             <h2>{starter.name}</h2>
             <p>{starter.description}</p>
+            <Price>
+              <p>${starter.price}</p>
+            </Price>
             <Allergens>
               <small>
                 <strong>Allergens:</strong>
@@ -58,14 +64,16 @@ export default ({ data }) => {
                 </ul>
               ))}
             </Allergens>
-            <strong>${starter.price}</strong>
           </Item>
         ))}
-        <h1>Mains</h1>
+        <h1 style={{ padding: "1rem 0" }}>Mains</h1>
         {Mains.map(({ node: main }) => (
           <Item>
             <h2>{main.name}</h2>
             <p>{main.description}</p>
+            <Price>
+              <p>${main.price}</p>
+            </Price>
             <Allergens>
               <small>
                 <strong>Allergens:</strong>
@@ -76,7 +84,6 @@ export default ({ data }) => {
                 </ul>
               ))}
             </Allergens>
-            <strong>${main.price}</strong>
           </Item>
         ))}
       </Wrapper>
@@ -88,33 +95,35 @@ export default ({ data }) => {
 const Wrapper = styled.div`
   text-align: center;
   display: grid;
-  grid-row-gap: 1rem;
+  margin-top: 50px;
+  /* padding: 1rem 0; */
   h1 {
     color: ${Colors.Purple};
     font-weight: 800;
-    text-transform: uppercase;
+    /* background: lime; */
   }
 `
 
 const Allergens = styled.div`
-  /* background: tomato; */
+  height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* background: lime; */
+  /* margin-bottom: 0.5rem; */
 `
 const Item = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 30px 40px 2rem 2rem;
-  grid-row-gap: 1rem;
+  /* background: tomato; */
   padding: 1rem;
-  justify-items: center;
+  h2 {
+    margin: 1rem;
+  }
+  p {
+    padding: 0 3rem;
+  }
   &:nth-child(odd) {
     background: #fafafa;
   }
-
-  p {
-    max-width: 70%;
-    line-height: 1.25rem;
-  }
 `
+
+const Price = styled.strong``

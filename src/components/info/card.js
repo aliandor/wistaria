@@ -13,5 +13,4 @@ const Cards = styled.section`
   max-width: 644px;
   border-radius: ${Styles.borderRadius};
   box-shadow: ${Styles.boxShadow};
-  padding-bottom: 2rem;
 `
