@@ -59,6 +59,7 @@ const Container = styled.div`
       height: 50px;
       width: 140px;
       font-size: 20px;
+      font-family: "Montserrat", sans-serif;
       color: ${Colors.Purple};
       font-weight: 600;
     }
