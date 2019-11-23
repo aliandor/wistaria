@@ -66,7 +66,7 @@ export default ({ data }) => {
             </Allergens>
           </Item>
         ))}
-        {/* <h1 style={{ padding: "1rem 0" }}>Lunch</h1>
+        <h1 style={{ padding: "1rem 0" }}>Lunch</h1>
         {Mains.map(({ node: lunch }) => (
           <Item>
             <h2>{lunch.name}</h2>
@@ -85,7 +85,7 @@ export default ({ data }) => {
               ))}
             </Allergens>
           </Item>
-        ))} */}
+        ))}
       </Wrapper>
       <MenuNav />
     </Layout>
