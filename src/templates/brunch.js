@@ -67,7 +67,7 @@ export default ({ data }) => {
           </Item>
         ))}
         <h1 style={{ padding: "1rem 0" }}>Lunch</h1>
-        {Mains.map(({ node: lunch }) => (
+        {Lunch.map(({ node: lunch }) => (
           <Item>
             <h2>{lunch.name}</h2>
             <p>{lunch.description}</p>
