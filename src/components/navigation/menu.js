@@ -1,10 +1,11 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
+import { useTransition, animated } from "react-spring"
 import { Link } from "gatsby"
 
 const NavMenu = () => {
   return (
-    <Menu>
+    <Menu key={key} style={props}>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -19,7 +20,7 @@ const NavMenu = () => {
 
 export default NavMenu
 
-const Menu = styled.div`
+const Menu = styled(animated.div)`
   position: absolute;
   background: #fafafa;
   width: 100%;

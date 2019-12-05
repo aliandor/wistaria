@@ -3,12 +3,17 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../navigation/logo"
 import { Icons } from "../assets/icons"
-import NavMenu from "./menu"
+// import NavMenu from "./menu"
+import { useTransition, animated } from "react-spring"
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false)
-
-  return (
+  const slide = useTransition(toggle, null, {
+    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(-1%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-80%,0,0)" },
+  })
+  return slide.map(({ item, props, key }) => (
     <Navigation>
       <Link to="/">
         <Logo />
@@ -26,12 +31,30 @@ const Nav = () => {
           />
         </button>
       </Buttons>
-      {toggle && <NavMenu />}
+      {item && (
+        <Menu key={key} style={props}>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/dinner">Menu</Link>
+            </li>
+          </ul>
+        </Menu>
+      )}
     </Navigation>
-  )
+  ))
 }
-
 export default Nav
+
+const Menu = styled(animated.div)`
+  position: absolute;
+  background: #fafafa;
+  width: 100%;
+  top: 50px;
+  left: 0;
+`
 
 const Navigation = styled.nav`
   position: fixed;
