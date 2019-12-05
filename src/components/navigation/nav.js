@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../navigation/logo"
 import { Icons } from "../assets/icons"
@@ -6,9 +7,9 @@ import { Icons } from "../assets/icons"
 const Nav = () => {
   return (
     <Navigation>
-      <div>
+      <Link to="/">
         <Logo />
-      </div>
+      </Link>
       <Buttons>
         <button>
           <img className="phone" src={Icons.phone} alt="" />

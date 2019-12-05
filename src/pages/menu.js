@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import MenuNav from "../components/Menu/menuNav"
 import Layout from "../components/layout"
+
 const Menu = () => {
   return (
     <Layout>
