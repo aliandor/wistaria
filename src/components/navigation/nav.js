@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../navigation/logo"
 import { Icons } from "../assets/icons"
+import NavMenu from "./menu"
 
 const Nav = () => {
+  const [toggle, setToggle] = useState(false)
+
   return (
     <Navigation>
       <Link to="/">
@@ -15,9 +18,15 @@ const Nav = () => {
           <img className="phone" src={Icons.phone} alt="" />
         </button>
         <button>
-          <img className="menu" src={Icons.menu} alt="" />
+          <img
+            className="menu"
+            src={Icons.menu}
+            alt=""
+            onClick={() => setToggle(!toggle)}
+          />
         </button>
       </Buttons>
+      {toggle && <NavMenu />}
     </Navigation>
   )
 }
@@ -38,6 +47,9 @@ const Navigation = styled.nav`
     margin-left: 0.5rem;
     background: none;
     border: none;
+  }
+  a {
+    text-decoration: none;
   }
 `
 const Buttons = styled.div`

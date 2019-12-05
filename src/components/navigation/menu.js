@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { Link } from "gatsby"
 
 const NavMenu = () => {
@@ -10,9 +10,8 @@ const NavMenu = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="">Menu</Link>
+          <Link to="/dinner">Menu</Link>
         </li>
-        {/* <li><Link to=""></Link></li> */}
       </ul>
     </Menu>
   )
@@ -20,4 +19,10 @@ const NavMenu = () => {
 
 export default NavMenu
 
-const Menu = styled.div``
+const Menu = styled.div`
+  position: absolute;
+  background: #fafafa;
+  width: 100%;
+  top: 50px;
+  left: 0;
+`
