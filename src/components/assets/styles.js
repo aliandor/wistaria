@@ -4,6 +4,6 @@ export const Colors = {
 }
 
 export const Styles = {
-  boxShadow: `0px 2px 2px rgba(0, 0, 0, 0.2)`,
+  boxShadow: `0px 2px 4px rgba(0, 0, 0, 0.3)`,
   borderRadius: `15px`,
 }

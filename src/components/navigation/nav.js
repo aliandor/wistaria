@@ -40,6 +40,9 @@ const Nav = () => {
             <li>
               <Link to="/dinner">Menu</Link>
             </li>
+            <li>
+              <Link to="/about">About us</Link>
+            </li>
           </ul>
         </Menu>
       )}
@@ -54,6 +57,19 @@ const Menu = styled(animated.div)`
   width: 100%;
   top: 50px;
   left: 0;
+  ul {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-row-gap: 1rem;
+    li {
+      list-style: none;
+      a {
+        color: #333;
+        font-size: 1.5rem;
+      }
+    }
+  }
 `
 
 const Navigation = styled.nav`

@@ -11,7 +11,7 @@ const NavMenu = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/dinner">Menu</Link>
+          <Link to="/dinner">Men</Link>
         </li>
       </ul>
     </Menu>
@@ -26,4 +26,7 @@ const Menu = styled(animated.div)`
   width: 100%;
   top: 50px;
   left: 0;
+  a {
+    list-style: none;
+  }
 `

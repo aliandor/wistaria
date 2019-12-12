@@ -43,7 +43,7 @@ const Map = styled.div`
   @media (min-width: 900px) {
     height: 50%;
     iframe {
-      height: 265px;
+      height: 290px;
     }
   }
 `
