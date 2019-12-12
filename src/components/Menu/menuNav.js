@@ -65,8 +65,7 @@ const Tabs = styled.nav`
     align-items: center;
     justify-content: flex-end;
     &[aria-current="page"] {
-      color: ${Colors.Purple};
-      background: #f9f9f9;
+      color: ${Colors.Purple}ff;
       font-weight: 600;
       .default {
         display: none;
