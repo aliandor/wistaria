@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../navigation/logo"
 import { Icons } from "../assets/icons"
-// import NavMenu from "./menu"
 import { useTransition, animated } from "react-spring"
 
 const Nav = () => {
@@ -39,9 +38,6 @@ const Nav = () => {
             </li>
             <li>
               <Link to="/dinner">Menu</Link>
-            </li>
-            <li>
-              <Link to="/about">About us</Link>
             </li>
           </ul>
         </Menu>
@@ -82,6 +78,7 @@ const Navigation = styled.nav`
   background: #fafafa;
   height: 50px;
   padding: 0 1rem;
+
   button {
     margin-left: 0.5rem;
     background: none;

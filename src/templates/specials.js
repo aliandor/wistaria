@@ -86,7 +86,7 @@ const Item = styled.div`
   p {
     padding: 0 3rem;
   }
-  &:nth-child(odd) {
+  &:nth-child(even) {
     background: #fafafa;
   }
 `

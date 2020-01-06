@@ -46,9 +46,7 @@ const Container = styled.div`
     background: white;
     font-size: 20px;
     line-height: 1.75rem;
-    @media (min-width: 900px) {
-      text-align: center;
-    }
+    text-align: center;
   }
   a {
     justify-self: center;

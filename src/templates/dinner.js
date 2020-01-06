@@ -68,7 +68,7 @@ export default ({ data }) => {
         ))}
         <h1 style={{ padding: "1rem 0" }}>Mains</h1>
         {Mains.map(({ node: main }) => (
-          <Item>
+          <Item2>
             <h2>{main.name}</h2>
             <p>{main.description}</p>
             <Price>
@@ -84,7 +84,7 @@ export default ({ data }) => {
                 </ul>
               ))}
             </Allergens>
-          </Item>
+          </Item2>
         ))}
       </Wrapper>
       <MenuNav />
@@ -113,6 +113,19 @@ const Allergens = styled.div`
   /* margin-bottom: 0.5rem; */
 `
 const Item = styled.div`
+  /* background: tomato; */
+  padding: 1rem;
+  h2 {
+    margin: 1rem;
+  }
+  p {
+    padding: 0 3rem;
+  }
+  &:nth-child(even) {
+    background: #fafafa;
+  }
+`
+const Item2 = styled.div`
   /* background: tomato; */
   padding: 1rem;
   h2 {

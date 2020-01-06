@@ -68,7 +68,7 @@ export default ({ data }) => {
         ))}
         <h1 style={{ padding: "1rem 0" }}>Lunch</h1>
         {Lunch.map(({ node: lunch }) => (
-          <Item>
+          <Item2>
             <h2>{lunch.name}</h2>
             <p>{lunch.description}</p>
             <Price>
@@ -84,7 +84,7 @@ export default ({ data }) => {
                 </ul>
               ))}
             </Allergens>
-          </Item>
+          </Item2>
         ))}
       </Wrapper>
       <MenuNav />
@@ -121,9 +121,21 @@ const Item = styled.div`
   p {
     padding: 0 3rem;
   }
+  &:nth-child(even) {
+    background: #fafafa;
+  }
+`
+const Item2 = styled.div`
+  /* background: tomato; */
+  padding: 1rem;
+  h2 {
+    margin: 1rem;
+  }
+  p {
+    padding: 0 3rem;
+  }
   &:nth-child(odd) {
     background: #fafafa;
   }
 `
-
 const Price = styled.strong``
