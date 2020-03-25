@@ -7,9 +7,9 @@ const Hero = `https://res.cloudinary.com/dnsdvh13n/image/upload/c_scale,f_auto,w
 const Header = () => (
   <Landing>
     <h1>
-      Some.Fancy.
+      Dinner.Drinks.
       <br />
-      Tagline.
+      Discussions.
     </h1>
   </Landing>
 )

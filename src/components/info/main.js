@@ -38,9 +38,7 @@ const Container = styled.div`
   h1 {
     color: ${Colors.Purple};
     margin: auto 0;
-    @media (min-width: 900px) {
-      text-align: center;
-    }
+    text-align: center;
   }
   p {
     background: white;
